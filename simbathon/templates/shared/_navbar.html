@@ -6,7 +6,7 @@
              <div class="row">
  
                <div class="brand">
-                 <a href="index.html">Pure Mix</a>
+                 <a href="{% url 'main:index' %}">Pure Mix</a>
                </div>
  
                <div class="navicon">
@@ -19,11 +19,11 @@
                    <div class="list-menu">
                      <i class="icon ion-close-round close-iframe"></i>
                      <div class="intro-inner">
-                          <ul id="nav-menu">
-                          <li><a href="index.html">Home</a></li>
-                             <li><a href="about.html">About</a></li>
-                             <li><a href="blog.html">Blog</a></li>
-                             <li><a href="contact.html">Contact</a></li>
+                        <ul id="nav-menu">
+                          <li><a href="{% url 'main:index' %}">Home</a></li>
+                          <li><a href="{% url 'main:about' %}">About</a></li>
+                          <li><a href="{% url 'ideathon:main' %}">Blog</a></li>
+                          <li><a href="{% url 'main:contact' %}">Contact</a></li>
                        </ul>
                      </div>
                    </div>
