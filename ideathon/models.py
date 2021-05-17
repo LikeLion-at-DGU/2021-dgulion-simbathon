@@ -1,7 +1,5 @@
 from django.db import models
 
-from django.db import models
-
 class Post(models.Model):
     POST_CATEGORY_CHOICES = [
         ('hi-sw', 'hi-sw'),
@@ -14,3 +12,6 @@ class Post(models.Model):
     mediafile = models.FileField(upload_to='mediafiles/', blank=True)
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
+
+    def __str__(self):
+        return self.title
