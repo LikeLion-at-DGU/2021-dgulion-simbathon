@@ -1,4 +1,7 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block content %}
 <!-- Header section
 ================================================== -->
 <section id="header" class="header-five">
@@ -6,10 +9,9 @@
     <div class="row">
       <div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
         <div class="header-thumb">
-          <h1 class="wow fadeIn" data-wow-delay="0.6s">Our Blog</h1>
+          <h1 class="wow fadeIn" data-wow-delay="0.6s">Ideathon Page</h1>
           <h3 class="wow fadeInUp" data-wow-delay="0.9s">
-            Lastest News and Articles
-
+            자유롭게 아이디어를 등록하고 의견을 나누는 공간입니다!
           </h3>
         </div>
       </div>
@@ -22,8 +24,8 @@
 <section id="blog">
   <div class="container">
     <div class="row">
-      <div class="wow fadeInUp col-md-6 col-sm-6" data-wow-delay="1s">
-        <h2 style="color:black;"><a href="{% url 'ideathon:new' %}">글쓰기</a></h2>
+      <h2 style="color:black;"><a href="{% url 'ideathon:new' %}">글쓰기</a></h2>
+      <!-- <div class="wow fadeInUp col-md-6 col-sm-6" data-wow-delay="1s">
         <div class="blog-thumb">
           <a href="{% url 'ideathon:single_post' %}"><img src="{% static 'images/blog-img1.jpg' %}" class="img-responsive" alt="Blog"/></a>
           <a href="{% url 'ideathon:single_post' %}"><h1>Flying the Clouds</h1></a>
@@ -55,8 +57,29 @@
           </p>
           <a href="{% url 'ideathon:single_post' %}" class="btn btn-default">Read More</a>
         </div>
+      </div> -->
+      {% for post in posts %}
+      <div class="wow fadeInUp col-md-4 col-sm-4" data-wow-delay="1.9s">
+        <div class="blog-thumb">
+          <a href="{% url 'ideathon:detail' post.id %}">
+            {% if post.mediafile %}
+            <img src="{{ post.mediafile.url }}" class="img-responsive" alt="Blog"/>
+            {% else %}
+            <img src="{% static 'images/blog-img3.jpg' %}" class="img-responsive" alt="Blog"/>
+            {% endif %}
+          </a>
+          <a href="{% url 'ideathon:detail' post.id %}"><h1>{{ post.title }}</h1></a>
+          <div class="post-format">
+            <span>By <a href="#">Jack Ma</a></span>
+            <span><i class="fa fa-date"></i> {{ post.created_at }}</span>
+          </div>
+          <p>
+            {{ post.content }}
+          </p>
+          <a href="{% url 'ideathon:detail' post.id %}" class="btn btn-default">Details</a >
+        </div>
       </div>
-
+      {% endfor %}
       <div class="wow fadeInUp col-md-4 col-sm-4" data-wow-delay="1.9s">
         <div class="blog-thumb">
           <a href="{% url 'ideathon:single_post' %}"><img src="{% static 'images/blog-img3.jpg' %}" class="img-responsive" alt="Blog"/></a>
