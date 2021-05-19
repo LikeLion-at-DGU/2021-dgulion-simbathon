@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Header section
+================================================== -->
+<section id="header" class="header-two">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
+        <div class="header-thumb">
+          <h1 class="wow fadeIn" data-wow-delay="0.6s">평가 기준</h1>
+          <h3 class="wow fadeInUp" data-wow-delay="0.9s">SIMBATHON</h3>
+        </div>
+			</div>
+
+		</div>
+	</div>		
+</section>
+
+
+<!-- Single Project section
+================================================== -->
+<section id="single-project">
+  <div class="container">
+      <div class="row">
+
+        <div class="wow fadeInUp col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-4" data-wow-delay="1.0s">
+          <div class="project-info">
+            <h4>주최</h4>
+            <p>동국대학교 멋쟁이 사자처럼</hp>
+          </div>
+          <div class="project-info">
+            <h4>참여</h4>
+            <hp>동국대학교<br>멋쟁이 사자처럼 9기</p>
+          </div>
+          <div class="project-info">
+            <h4>지원</h4>
+            <p>동국대학교 융합 교육원</p>
+          </div>
+        </div>
+
+        <div class="wow fadeInUp col-md-7 col-sm-7" data-wow-delay="1.2s">
+          <p>심바톤은 다음과 같은 평가기준을 통해 최종 결과물의 순위를 결정합니다.</p><br>
+          <h4>점수 합산 비율</h4>
+          <table class="table table-bordered border-primary">
+            <th>평가자</th><th>비율</th>
+            <tr>
+              <td>교수님 평가</td><td>30 %</td>
+            </tr>
+            <tr>
+              <td>운영진 평가</td><td>40 %</td>
+            </tr>
+            <tr>
+              <td>참가자 상호 투표</td><td>30 %</td>
+            </tr>
+          </table>
+          <br>
+          <h4>운영진 평가 기준</h4>
+          <table class="table table-bordered border-primary">
+            <th>기준</th><th>비율</th>
+            <tr>
+              <td>주제 부합성</td><td>10 %</td>
+            </tr>
+            <tr>
+              <td>아이디어 창의성</td><td>20 %</td>
+            </tr>
+            <tr>
+              <td>작품의 완성도</td><td>20 %</td>
+            </tr>
+            <tr>
+              <td>작품의 실용성</td><td>20 %</td>
+            </tr>
+            <tr>
+              <td>코드의 효율성</td><td>10 %</td>
+            </tr>
+            <tr>
+              <td>Github 활용(협업의 시너지)</td><td>10 %</td>
+            </tr>
+            <tr>
+              <td>발표의 전달력</td><td>10 %</td>
+            </tr>
+          </table>
+          <br>
+          <p>참가자 상호 투표 시 자신의 팀을 제외한 팀 중 2표를 행사합니다.</p>
+          <p>(득표수 X 5)로 점수에 최종 반영합니다.</p>
+          <p>최종 득점 순으로 1등, 2등, 3등을 시상합니다.</p>
+          
+          <img src="{% static 'images/judge.jpg' %}" class="img-responsive" alt="Single Project">
+        </div>
+
+      </div>
+  </div>
+</section>
+
+{% endblock %}
