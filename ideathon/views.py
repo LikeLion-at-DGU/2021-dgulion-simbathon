@@ -16,7 +16,7 @@ def create(request):
     new_post.title = request.POST['title']
     new_post.category = request.POST['category']
     new_post.content = request.POST['content']
-    new_post.mediafile = request.FILES['mediafile']
+    new_post.mediafile = request.FILES.get('mediafile')
     new_post.save()
     return redirect('ideathon:main')
 
