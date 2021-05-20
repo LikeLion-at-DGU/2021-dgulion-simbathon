@@ -23,3 +23,17 @@ def create(request):
 def detail(request, id):
     post = get_object_or_404(Post, pk=id)
     return render(request, 'ideathon/detail.html', {'post':post})
+
+def update(request, id):
+    post = get_object_or_404(Post, pk=id)
+    if request.method == "POST":
+        post.title = request.POST['title']
+        post.content = request.POST['content']
+        post.save()
+        return redirect('ideathon:detail', post.id)
+    return render(request, 'ideathon/update.html', {'post':post})
+
+def delete(request, id):
+    post = get_object_or_404(Post, pk=id)
+    post.delete()
+    return redirect("ideathon:main")

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<form action="{% url 'ideathon:update' post.id %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container">
+        <h4>아이디어 수정</h4>
+        <select name="category" id="category" class="form-control col-md-2 mb-2" style="color:black">
+            {% if post.category == 'hi-sw' %}
+                <option value="hi-sw" selected>HI-SW 봉사단 관련 서비스</option>
+                <option value="club" >중앙 동아리 관련 서비스</option>
+            {% else %}   
+                <option value="hi-sw">HI-SW 봉사단 관련 서비스</option>
+                <option value="club" selected>중앙 동아리 관련 서비스</option>           
+            {% endif %}
+        </select>    
+        <div class="col-12">
+            <label>제목</label>
+            <input type="text" class="form-control mb-30" name="title" value="{{post.title}}" id="title_id" required style="color:black;">
+        </div>      
+        <div class="col-12">
+            <label>내용</label>
+            <textarea class="form-control mb-30" name="content" value={{post.content}} style="color:black;"></textarea>
+        </div>
+        <div class="col-12">
+            <label for="uploadFile" class="upload-file" >
+                <div class="btn btn-outline">파일 선택<input type="file" id="input-mediafile" name="mediafile" onchange="fileCheck(this)"></div>
+                <p></p><!-- 업로드파일명 -->
+            </label>
+        </div>
+        <div class="col-12">
+            <div id="content"></div>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn alime-btn btn-2 mt-15">Update</button>
+        </div>
+    </div>    
+</form>
+
+{% endblock %}
