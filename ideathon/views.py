@@ -42,7 +42,7 @@ def delete(request, id):
 def create_comment(request, post_id) : # 어느 게시글?
   if request.method == "POST":
     post = get_object_or_404(Post, pk=post_id)
-    comment_content= request.POST.get('content')
+    comment_content= request.POST.get('content') # html의 name이랑 같아!
     current_user = request.user
     Comment.objects.create(content=comment_content, post=post,  writer=current_user) #모델
   return redirect('ideathon:detail', post.pk)

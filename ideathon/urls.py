@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import *
+# from .views import *
 
 app_name='ideathon'
 urlpatterns =[
@@ -12,5 +12,5 @@ urlpatterns =[
     path('update/<int:id>/', views.update, name="update"),
     path('delete/<int:id>/', views.delete, name="delete"),
     #comment
-    path('<int:post_id>/create_comment', create_comment, name="create_comment"),
+    path('<int:post_id>/create_comment', views.create_comment, name="create_comment"),
 ]

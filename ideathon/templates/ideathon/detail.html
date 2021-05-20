@@ -64,25 +64,11 @@
     <h3>Leave a comment</h3>
     <form action="{% url 'ideathon:create_comment' post.id %}" method="post">
       {% csrf_token %}
-      <input 
-        type="text"
-        class="form-control"
-        placeholder="Name"
-        name="name"
-        required
-      />
-      <!-- <input
-        type="email"
-        class="form-control"
-        placeholder="Email"
-        name="email"
-        required
-      /> -->
       <textarea
         class="form-control"
         placeholder="Comment"
         rows="5"
-        name="comment"
+        name="content"
         required
         id="comment"
       ></textarea>
@@ -92,7 +78,7 @@
           type="submit"
           class="form-control"
           id="submit"
-          value="Submit a comment"
+          value="submit"
         />
       </div>
     </form>
