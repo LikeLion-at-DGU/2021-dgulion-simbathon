@@ -21,90 +21,103 @@
 <!-- Single Project section
 ================================================== -->
 <section id="single-project">
-    <div class="container">
-        <div class="row">
-  
-          <div class="wow fadeInUp col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-4" data-wow-delay="1s">
-            <div class="project-info">
-                <h4>Category</h4>
-                {% if post.category == "hi-sw" %}
-                <p>HI-SW 봉사단 관련 서비스</p>
-                {% else %}
-                <p>중앙 동아리 관련 서비스</p>
-                {% endif %}
-            </div>
-            <div class="project-info">
-              <h4>Writer</h4>
-              <p>Ananda Co.</hp>
-            </div>
-            <div class="project-info">
-              <h4>Date</h4>
-              <hp>{{ post.created_at }}</p>
-            </div>
-            <div class="project-info">
-              <a href="{% url 'ideathon:update' post.id %}">수정하기</a>
-            </div>
-            <div class="project-info">
-              <a href="{% url 'ideathon:delete' post.id %}">삭제하기</a>
+  <div class="container">
+    <div class="row">
+      <div class="wow fadeInUp col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-4" data-wow-delay="1s">
+        <div class="project-info">
+          <h4>Category</h4>
+          {% if post.category == "hi-sw" %}
+          <p>HI-SW 봉사단 관련 서비스</p>
+          {% else %}
+          <p>중앙 동아리 관련 서비스</p>
+          {% endif %}
+        </div>
+        <!-- <div class="project-info">
+          <h4>CONTENT</h4>
+          <p>{{ post.content }}</p>
+          {% if post.mediafile %}
+          <img src="{{ post.mediafile.url }}" class="img-responsive" alt="Single Project">
+          {% endif %}    
+        </div> -->
+        <div class="project-info">
+          <h4>Writer</h4>
+          <p>Ananda Co.</hp>
+        </div>
+        <div class="project-info">
+          <h4>Date</h4>
+          <hp>{{ post.created_at }}</p>
+        </div>
+        <div class="button">
+          <div class="project-info url">
+            <div class="edit">
+              <a href="{% url 'ideathon:update' post.id %}">수정</a>
             </div>
           </div>
-          
-
-          <div class="wow fadeInUp col-md-7 col-sm-7" data-wow-delay="2.6s">
-            <p style="word-break: break-all;">{{ post.content }}</p>
-            {% if post.mediafile %}
-            <img src="{{ post.mediafile.url }}" class="img-responsive" alt="Single Project">
-            {% endif %}
+          <div class="project-info url">
+            <a href="{% url 'ideathon:delete' post.id %}">삭제</a>
           </div>
         </div>
-    </div>
-</section>
-<section>
-  <div class="blog-comment-form">
-    <h3>Leave a comment</h3>
-    <form action="{% url 'ideathon:create_comment' post.id %}" method="post">
-      {% csrf_token %}
-      <textarea
-        class="form-control"
-        placeholder="Comment"
-        rows="5"
-        name="content"
-        required
-        id="comment"
-      ></textarea>
-      <div class="contact-submit">
-        <input
-          name="submit"
-          type="submit"
-          class="form-control"
-          id="submit"
-          value="submit"
-        />
       </div>
-    </form>
-  </div>
-  <div class="blog-comment">
-    <h3>Comments</h3>
-    {% for comment in comments %}
-    <div class="media">
-      <div class="media-object pull-left">
-        <img
-          src="{% static 'images/comment1.jpg' %}"
-          class="img-responsive"
-          alt="blog"
-        />
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">{{ comment.writer }}</h4>
-        <h5>5 June 2016, Sunday</h5>
-        <p>
-          {{ comment.content }}
-        </p>
+      <div class="wow fadeInUp col-md-7 col-sm-7" data-wow-delay="2.6s">
+        <p style="word-break: break-all;">{{ post.content }}</p>
+        {% if post.mediafile %}
+        <img src="{{ post.mediafile.url }}" class="img-responsive" alt="Single Project">
+        {% endif %}
       </div>
     </div>
-    {% endfor %}
+    <div class="row">
+      <div class="wow fadeInUp col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 container">
+        <div class="blog-comment-form">
+          <h3>Leave a comment</h3>
+          <form action="{% url 'ideathon:create_comment' post.id %}" method="post">
+            {% csrf_token %}
+            <textarea
+              class="form-control"
+              placeholder="Comment"
+              rows="5"
+              name="content"
+              required
+              id="comment"
+            ></textarea>
+            <div class="contact-submit input">
+              <input
+                name="submit"
+                type="submit"
+                class="form-control"
+                id="submit"
+                value="submit"
+              />
+            </div>
+          </form>
+        </div>
+        <div class="blog-comment">
+          <h3>Comments</h3>
+          {% for comment in comments %}
+          <div class="media">
+            <div class="media-body">
+              <p class="media-heading">{{ comment.writer }}</p>
+              <h4>
+                {{ comment.content }}
+              </h4>
+              <h5>5 June 2016, Sunday</h5>
+            </div>
+          </div>
+          <div class="button">
+            <div class="project-info url comment">
+              <div class="edit">
+                <a href="#">수정</a>
+              </div>
+            </div>
+            <div class="project-info url comment">
+              <a href="#">삭제</a>
+            </div>
+          </div>
+  
+          {% endfor %}
+        </div>
+      </div>
+    </div>
   </div>
-
 </section>
 
 {% endblock %}

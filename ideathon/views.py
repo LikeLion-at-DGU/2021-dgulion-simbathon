@@ -23,7 +23,7 @@ def create(request):
 def detail(request, id):
     post = get_object_or_404(Post, pk=id)
     all_comments = post.comments.all().order_by('-created_at')
-    return render(request, 'ideathon/detail.html', {'post':post, 'comments':all_comments})
+    return render(request, 'ideathon/detail.html', {'post':post, 'comments':all_comments}) #html>comments
 
 def update(request, id):
     post = get_object_or_404(Post, pk=id)

@@ -1,0 +1,27 @@
+.contact-submit input {
+  width: 100px;
+}
+
+.button {
+  display: flex;
+}
+
+.project-info.url {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 34px;
+  border: 1px solid #ccc;
+  margin: 3px;
+  border-radius: 4px;
+  padding-top: 10px;
+}
+
+.contact-submit.input {
+  margin-top: 5px;
+}
+
+.project-info.url.comment {
+  width: 100px;
+}
