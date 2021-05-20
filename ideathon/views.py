@@ -44,5 +44,15 @@ def create_comment(request, post_id) : # 어느 게시글?
     post = get_object_or_404(Post, pk=post_id)
     comment_content= request.POST.get('content') # html의 name이랑 같아!
     current_user = request.user
-    Comment.objects.create(content=comment_content, post=post,  writer=current_user) #모델
+    Comment.objects.create(content=comment_content, post=post,  writer=current_user) # 모델 = views.py
   return redirect('ideathon:detail', post.pk)
+
+def update_comment(request, post_id, comment_id):
+    post = get_object_or_404(Post, pk=post_id)
+    comment = get_object_or_404(Comment, pk=comment_id)
+    if request.method=="POST":
+        comment.content = request.POST['content']
+        comment.save()
+        all_comments = post.comments.all()
+        return redirect('ideathon:detail', post.pk)
+    return render(request, 'ideathon/update_comment.html', {'comment' :comment})

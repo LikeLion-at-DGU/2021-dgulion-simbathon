@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container mt-5">
+  <form class="form-row" action="#" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <textarea
+      class="form-control"
+      placeholder="Comment"
+      rows="5"
+      name="content"
+      required
+      id="comment"
+    >
+      {{comment.content}} 
+    </textarea>
+    <div class="contact-submit input">
+      <input
+        name="submit"
+        type="submit"
+        class="form-control"
+        id="submit"
+        value="edit"
+      />
+    </div>
+  </form>
+</div>
+
+{% endblock %}
