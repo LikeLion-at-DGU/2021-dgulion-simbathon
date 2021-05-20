@@ -21,4 +21,5 @@ urlpatterns = [
     path('', include('main.urls')),
     path('ideathon', include('ideathon.urls')),
     path('accounts/',include('allauth.urls')),
+    path('users',include('users.urls')),
 ]
