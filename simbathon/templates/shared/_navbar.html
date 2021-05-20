@@ -21,6 +21,11 @@
                     <li><a href="{% url 'main:about' %}">About</a></li>
                     <li><a href="{% url 'ideathon:main' %}">Ideathon</a></li>
                     <li><a href="{% url 'main:contact' %}">Contact</a></li>
+                    {% if user.is_authenticated %}
+                      <li><a href="{% url 'account_logout' %}">Logout</a></li>
+                    {% else %}
+                      <li><a href="{% url 'account_login' %}">Login</a></li>
+                    {% endif %}
                   </ul>
                 </div>
               </div>
