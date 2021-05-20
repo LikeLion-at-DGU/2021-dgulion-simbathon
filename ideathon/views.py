@@ -56,3 +56,9 @@ def update_comment(request, post_id, comment_id):
         all_comments = post.comments.all()
         return redirect('ideathon:detail', post.pk)
     return render(request, 'ideathon/update_comment.html', {'comment' :comment})
+
+def delete_comment(request, post_id, comment_id):
+    post = get_object_or_404(Post, pk=post_id)
+    comment = get_object_or_404(Comment, pk=comment_id)
+    comment.delete()
+    return redirect('ideathon:detail', post.pk)
