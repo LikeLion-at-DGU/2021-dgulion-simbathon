@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Header section
+================================================== -->
+<section id="header" class="header-two">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
+        <div class="header-thumb">
+          <h1 class="wow fadeIn" data-wow-delay="0.6s">진행 및 규칙</h1>
+          <h3 class="wow fadeInUp" data-wow-delay="0.9s">SIMBATHON</h3>
+        </div>
+			</div>
+
+		</div>
+	</div>		
+</section>
+
+
+<!-- Single Project section
+================================================== -->
+<section id="single-project">
+  <div class="container">
+      <div class="row">
+
+        <div class="wow fadeInUp col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-4" data-wow-delay="1.0s">
+          <div class="project-info">
+            <h4>주최</h4>
+            <p>동국대학교 멋쟁이 사자처럼</hp>
+          </div>
+          <div class="project-info">
+            <h4>참여</h4>
+            <hp>동국대학교<br>멋쟁이 사자처럼 9기</p>
+          </div>
+          <div class="project-info">
+            <h4>지원</h4>
+            <p>동국대학교 융합 교육원</p>
+          </div>
+        </div>
+
+        <div class="wow fadeInUp col-md-7 col-sm-7" data-wow-delay="1.2s">
+          
+          <p>심바톤에서는 다음 두 주제 중 하나를 선택하여 기획하고 팀을 이루어 개발을 합니다.</p>
+          <h3>1. HI-SW(하이소프트웨어 봉사단)과 관련된 서비스</h3>
+          <h3>2. 학교 중앙동아리 관련 서비스</h3>
+          <br>
+          <p>팀 구성 : 4인 1팀, 총 6팀</p>
+          <p>본 행사의 취지와 공정성을 위해 멘토 및 운영진에게 질문은 팀당 3회로 제한합니다.</p>
+          <p>운영진이 제작한 사이트를 통해 아이디어와 결과물을 확인하고 피드백 및 팀 빌딩을 진행한 후 최종 결과물을 제출합니다.</p>
+          <p>최종 결과물을 보고 참가자 간 상호 투표를 진행합니다.</p>
+          <p>참가자 총 24명은 자신의 팀을 제외한 팀 중 2표를 행사합니다.</p>
+          <img src="{% static 'images/process.jpg' %}" class="img-responsive" alt="Single Project">
+        </div>
+
+      </div>
+  </div>
+</section>
+
+{% endblock %}
