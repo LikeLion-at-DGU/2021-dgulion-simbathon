@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<div class="container" style="text-align: center; width: 300px;">
+	<div class="wow fadeInUp" data-wow-delay="1.6s">
+		<h1>Simbathon</h1>
+		<form class="login" method="POST" action="{% url 'account_login' %}">
+			{% csrf_token %}
+			{{ form.as_p }}
+					<input type="submit" class="form-control" value="Login"/>
+		</form>
+	</div>
+</div>
+
+{% endblock %}
