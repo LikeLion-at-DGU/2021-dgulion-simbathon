@@ -4,7 +4,7 @@
 <!-- Header section
 ================================================== -->
 <section id="header" class="header-five">
-  <div class="container">
+<div class="container">
     <div class="row">
       <div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
         <div class="header-thumb">
@@ -42,9 +42,7 @@
         </div>
         <div class="button">
           <div class="project-info url">
-            <div class="edit">
-              <a href="{% url 'ideathon:update' post.id %}">수정</a>
-            </div>
+            <a href="{% url 'ideathon:update' post.id %}">수정</a>
           </div>
           <div class="project-info url">
             <a href="{% url 'ideathon:delete' post.id %}">삭제</a>
