@@ -4,7 +4,7 @@
 <!-- Header section
 ================================================== -->
 <section id="header" class="header-five">
-  <div class="container">
+<div class="container">
     <div class="row">
       <div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
         <div class="header-thumb">
@@ -32,13 +32,6 @@
           <p>중앙 동아리 관련 서비스</p>
           {% endif %}
         </div>
-        <!-- <div class="project-info">
-          <h4>CONTENT</h4>
-          <p>{{ post.content }}</p>
-          {% if post.mediafile %}
-          <img src="{{ post.mediafile.url }}" class="img-responsive" alt="Single Project">
-          {% endif %}    
-        </div> -->
         <div class="project-info">
           <h4>Writer</h4>
           <p>Ananda Co.</hp>
@@ -49,9 +42,7 @@
         </div>
         <div class="button">
           <div class="project-info url">
-            <div class="edit">
-              <a href="{% url 'ideathon:update' post.id %}">수정</a>
-            </div>
+            <a href="{% url 'ideathon:update' post.id %}">수정</a>
           </div>
           <div class="project-info url">
             <a href="{% url 'ideathon:delete' post.id %}">삭제</a>
@@ -66,7 +57,8 @@
       </div>
     </div>
     <div class="row">
-      <div class="wow fadeInUp col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 container">
+      <div class="wow fadeInUp col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 container"  data-wow-delay="1s">
+        {% if user.is_authenticated %}
         <div class="blog-comment-form">
           <h3>Leave a comment</h3>
           <form action="{% url 'ideathon:create_comment' post.id %}" method="post">
@@ -90,6 +82,12 @@
             </div>
           </form>
         </div>
+        {% else %}
+        <div class="login-comment">
+          로그인 후 comment 작성이 가능합니다.
+        </div>
+        {% endif %}
+
         <div class="blog-comment">
           <h3>Comments</h3>
           {% for comment in comments %}
@@ -102,16 +100,16 @@
               <h5>5 June 2016, Sunday</h5>
             </div>
           </div>
+          {% if user == comment.writer %}
           <div class="button">
             <div class="project-info url comment">
-              <div class="edit">
-                <a href="{% url 'ideathon:update_comment' post.pk comment.pk %}">수정</a>
-              </div>
+              <a href="{% url 'ideathon:update_comment' post.pk comment.pk %}">수정</a>
             </div>
             <div class="project-info url comment">
               <a href="{% url 'ideathon:delete_comment' post.pk comment.pk %}">삭제</a>
             </div>
           </div>
+          {% endif %}
           {% endfor %}
         </div>
       </div>
