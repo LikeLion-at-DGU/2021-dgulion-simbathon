@@ -62,7 +62,7 @@
         {% endif %}
         </div>
       <div class="wow fadeInUp col-md-7 col-sm-7" data-wow-delay="2.6s">
-        <p style="word-break: break-all;">{{ post.content }}</p>
+        <h4 style="word-break: break-all;">{{ post.content|linebreaksbr }}</h4>
       </div>
     </div>
     <div class="row">
@@ -103,9 +103,9 @@
           <div class="media">
             <div class="media-body">
               <p class="media-heading">{{ comment.writer }}</p>
-              <h4>
-                {{ comment.content }}
-              </h4>
+              <h5>
+                {{ comment.content|linebreaksbr }}
+              </h5>
               <p class="media-heading">{{comment.created_at}}</p>
             </div>
           </div>
