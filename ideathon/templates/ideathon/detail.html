@@ -47,17 +47,19 @@
           <h4>Date</h4>
           <hp>{{ post.created_at }}</p>
         </div>
-        <div class="button">
-          <div class="project-info url">
-            <div class="edit">
-              <a href="{% url 'ideathon:update' post.id %}">수정</a>
+        {% if user == post.writer %}
+          <div class="button">
+            <div class="project-info url">
+              <div class="edit">
+                <a href="{% url 'ideathon:update' post.id %}">수정</a>
+              </div>
+            </div>
+            <div class="project-info url">
+              <a href="{% url 'ideathon:delete' post.id %}">삭제</a>
             </div>
           </div>
-          <div class="project-info url">
-            <a href="{% url 'ideathon:delete' post.id %}">삭제</a>
-          </div>
+        {% endif %}
         </div>
-      </div>
       <div class="wow fadeInUp col-md-7 col-sm-7" data-wow-delay="2.6s">
         <p style="word-break: break-all;">{{ post.content }}</p>
         {% if post.mediafile %}
