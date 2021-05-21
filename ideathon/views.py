@@ -14,6 +14,7 @@ def new(request):
 def create(request):
     new_post = Post()
     new_post.title = request.POST['title']
+    new_post.writer = request.user
     new_post.category = request.POST['category']
     new_post.content = request.POST['content']
     new_post.mediafile = request.FILES.get('mediafile')
