@@ -18,6 +18,12 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+    def file_name(self):
+        return self.mediafile.name[11:].split('.')[-2]
+    
+    def file_type(self):
+        return self.mediafile.name.split('.')[-1]
+
 class Comment(models.Model):
   content = models.TextField()
   created_at = models.DateTimeField(auto_now_add=True)

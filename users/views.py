@@ -1,5 +1,9 @@
 from django.shortcuts import render, get_object_or_404
-from .models import User
+from django.contrib.auth.models import User
+from ideathon.models import Post
+
 
 def mypage(request):
-  return render(request, 'users/mypage.html')
+  user = request.user
+  posts = Post.objects.filter(writer=user)
+  return render(request, 'users/mypage.html', {'user':user, 'posts':posts})
