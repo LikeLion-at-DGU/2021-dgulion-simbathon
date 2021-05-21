@@ -36,6 +36,8 @@ def update(request, id):
         if request.method == "POST":
             post.title = request.POST['title']
             post.content = request.POST['content']
+            post.category = request.POST['category']
+            post.mediafile = request.FILES.get('mediafile')
             post.save()
             return redirect('ideathon:detail', post.id)
     return render(request, 'ideathon/update.html', {'post':post})
