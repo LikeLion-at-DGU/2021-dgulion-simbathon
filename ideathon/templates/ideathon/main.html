@@ -19,9 +19,6 @@
 ================================================== -->
 <section id="portfolio">
   <div class="container">
-    <div class="blog-thumb">
-      <a href="{% url 'ideathon:new' %}" class="btn btn-default">아이디어 등록</a>
-    </div>
     <div class="row">
       <div class="col-md-12 col-sm-12">
         <!-- iso section -->
@@ -31,31 +28,51 @@
               <a href="#" data-filter="*" class="selected opc-main-bg">All</a>
             </li>
             <li>
-              <a href="#" class="opc-main-bg" data-filter=".hi-sw">HI-SW 봉사단 관련 서비스</a>
+              <a href="#" class="opc-main-bg" data-filter=".hi-sw"
+                >HI-SW 봉사단 관련 서비스</a
+              >
             </li>
             <li>
-              <a href="#" class="opc-main-bg" data-filter=".club">중앙 동아리 관련 서비스</a>
+              <a href="#" class="opc-main-bg" data-filter=".club"
+                >중앙 동아리 관련 서비스</a
+              >
             </li>
           </ul>
+          <div class="upload-idea">
+            <a href="{% url 'ideathon:new' %}" class="upload-btn"
+              >아이디어 등록</a
+            >
+          </div>
           <div class="iso-box-section wow fadeInUp" data-wow-delay="1s">
             <div class="iso-box-wrapper col4-iso-box">
-            {% for post in posts %}
-              {% if post.category == 'hi-sw' %}
-              <div class="iso-box hi-sw col-md-3 col-sm-3" data-wow-delay="1.3s">
+              {% for post in posts %} {% if post.category == 'hi-sw' %}
+              <div
+                class="iso-box boxxxx hi-sw col-md-3 col-sm-3"
+                data-wow-delay="1.3s"
+              >
                 <div class="blog-thumb">
-                  <a href="{% url 'ideathon:detail' post.id %}"><img src="{% static 'images/simbathon.jpg' %}" class="img-responsive" alt="Blog"/></a>
-                  <a href="{% url 'ideathon:detail' post.id %}"><h1 style="word-break: break-all;">{{post.title}}</h1></a>
+                  <a href="{% url 'ideathon:detail' post.id %}"
+                    ><img
+                      src="{% static 'images/simbathon.jpg' %}"
+                      class="img-responsive"
+                      alt="Blog"
+                  /></a>
+                  <a href="{% url 'ideathon:detail' post.id %}"
+                    ><h1 style="word-break: break-all">{{post.title}}</h1></a
+                  >
                   <div class="post-format">
                     <span>By <a href="#">{{post.writer}}</a></span>
                     <!-- <span><i class="fa fa-date"></i> {{post.created_at}}</span> -->
                   </div>
-                  <!-- <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                    nonummy.
-                  </p> -->
-                  <a href="{% url 'ideathon:detail' post.id %}" class="btn btn-default">Details</a>
+                  <div class="btn-detail">
+                    <a
+                      href="{% url 'ideathon:detail' post.id %}"
+                      class="upload-btn"
+                      >Details</a
+                    >
+                  </div>
                 </div>
-              </div>  
+              </div>
               <!-- 메인 페이지 템플릿 -->
               <!-- <div class="iso-box club col-md-4 col-sm-6">
                 <div class="portfolio-thumb">
@@ -79,22 +96,34 @@
                 </div>
               </div> -->
               {% else %}
-              <div class="iso-box club col-md-3 col-sm-3" data-wow-delay="1.3s">
+              <div
+                class="iso-box boxxxx club col-md-3 col-sm-3"
+                data-wow-delay="1.3s"
+              >
                 <div class="blog-thumb">
-                  <a href="{% url 'ideathon:detail' post.id %}"><img src="{% static 'images/simbathon.jpg' %}" class="img-responsive" alt="Blog"/></a>
-                  <a href="{% url 'ideathon:detail' post.id %}"><h1 style="word-break: break-all;">{{post.title}}</h1></a>
+                  <a href="{% url 'ideathon:detail' post.id %}"
+                    ><img
+                      src="{% static 'images/simbathon.jpg' %}"
+                      class="img-responsive"
+                      alt="Blog"
+                  /></a>
+                  <a href="{% url 'ideathon:detail' post.id %}"
+                    ><h1 style="word-break: break-all">{{post.title}}</h1></a
+                  >
                   <div class="post-format">
                     <span>By <a href="#">{{post.writer}}</a></span>
                     <!-- <span><i class="fa fa-date"></i> {{post.created_at}}</span> -->
                   </div>
-                  <!-- <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                    nonummy.
-                  </p> -->
-                  <a href="{% url 'ideathon:detail' post.id %}" class="btn btn-default">Details</a>
+                  <div class="btn-detail">
+                    <a
+                      href="{% url 'ideathon:detail' post.id %}"
+                      class="upload-btn"
+                      >Details</a
+                    >
+                  </div>
                 </div>
               </div>
-              <!-- 메인 페이지 템플릿 -->  
+              <!-- 메인 페이지 템플릿 -->
               <!-- <div class="iso-box club col-md-4 col-sm-6">
                 <div class="portfolio-thumb">
                   <img
@@ -112,8 +141,7 @@
                   </div>
                 </div>
               </div> -->
-              {% endif %}    
-            {% endfor %}
+              {% endif %} {% endfor %}
             </div>
           </div>
         </div>
@@ -128,10 +156,11 @@
   <div class="container">
     <div class="row">
       <div class="blog-thumb">
-        <a href="{% url 'ideathon:new' %}" class="btn btn-default">아이디어 등록</a>
-        <div class="col-md-12 col-sm-12">
+        <a href="{% url 'ideathon:new' %}" class="btn btn-default"
+          >아이디어 등록</a
+        >
+        <div class="col-md-12 col-sm-12"></div>
       </div>
-    </div>
       {% for post in posts %}
       <div class="wow fadeInUp col-md-4 col-sm-4" data-wow-delay="0.5s">
         <div class="blog-thumb">
