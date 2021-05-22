@@ -51,17 +51,14 @@
                 data-wow-delay="1.3s"
               >
                 <div class="blog-thumb">
-                  <a href="{% url 'ideathon:detail' post.id %}"
-                    ><img
+                  <img
                       src="{% static 'images/simbathon.jpg' %}"
                       class="img-responsive"
                       alt="Blog"
-                  /></a>
-                  <a href="{% url 'ideathon:detail' post.id %}"
-                    ><h1 style="word-break: break-all">{{post.title}}</h1></a
-                  >
+                  />
+                  <h2 style="word-break: break-all; color:black;">{{post.title}}</h2>
                   <div class="post-format">
-                    <span>By <a href="#">{{post.writer}}</a></span>
+                    <span>By {{post.writer}}</span>
                     <!-- <span><i class="fa fa-date"></i> {{post.created_at}}</span> -->
                   </div>
                   <div class="btn-detail">
@@ -73,46 +70,20 @@
                   </div>
                 </div>
               </div>
-              <!-- 메인 페이지 템플릿 -->
-              <!-- <div class="iso-box club col-md-4 col-sm-6">
-                <div class="portfolio-thumb">
-                  <img
-                    src="{% static 'images/simbathon.jpg' %}"
-                    class="img-responsive"
-                    alt="Portfolio"
-                  />
-                  <div>
-                    <p>{{post.title}}</p>
-                    <p>{{post.writer}}</p>
-                  </div>
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-item">
-                      <a href="{% url 'ideathon:detail' post.id %}"
-                        ><i class="fa fa-link"></i
-                      ></a>
-                      <h2>{{post.title}}</h2>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
               {% else %}
               <div
                 class="iso-box boxxxx club col-md-3 col-sm-3"
                 data-wow-delay="1.3s"
               >
                 <div class="blog-thumb">
-                  <a href="{% url 'ideathon:detail' post.id %}"
-                    ><img
+                  <img
                       src="{% static 'images/simbathon.jpg' %}"
                       class="img-responsive"
                       alt="Blog"
-                  /></a>
-                  <a href="{% url 'ideathon:detail' post.id %}"
-                    ><h1 style="word-break: break-all">{{post.title}}</h1></a
-                  >
+                  />
+                  <h2 style="word-break: break-all; color:black;">{{post.title}}</h2>
                   <div class="post-format">
-                    <span>By <a href="#">{{post.writer}}</a></span>
-                    <!-- <span><i class="fa fa-date"></i> {{post.created_at}}</span> -->
+                    <span>By {{post.writer}}</span>
                   </div>
                   <div class="btn-detail">
                     <a
@@ -123,258 +94,10 @@
                   </div>
                 </div>
               </div>
-              <!-- 메인 페이지 템플릿 -->
-              <!-- <div class="iso-box club col-md-4 col-sm-6">
-                <div class="portfolio-thumb">
-                  <img
-                    src="{% static 'images/simbathon.jpg' %}"
-                    class="img-responsive"
-                    alt="Portfolio"
-                  />
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-item">
-                      <a href="{% url 'ideathon:detail' post.id %}"
-                        ><i class="fa fa-link"></i
-                      ></a>
-                      <h2>{{post.title}}</h2>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
               {% endif %} {% endfor %}
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Blog section
-================================================== -->
-<section id="blog">
-  <div class="container">
-    <div class="row">
-      <div class="blog-thumb">
-        <a href="{% url 'ideathon:new' %}" class="btn btn-default"
-          >아이디어 등록</a
-        >
-        <div class="col-md-12 col-sm-12"></div>
-      </div>
-      {% for post in posts %}
-      <div class="wow fadeInUp col-md-4 col-sm-4" data-wow-delay="0.5s">
-        <div class="blog-thumb">
-          <a href="{% url 'ideathon:detail' post.id %}">
-            {% if post.mediafile %}
-            <img
-              src="{{ post.mediafile.url }}"
-              class="img-responsive"
-              alt="Blog"
-            />
-            {% else %}
-            <img
-              src="{% static 'images/blog-img3.jpg' %}"
-              class="img-responsive"
-              alt="Blog"
-            />
-            {% endif %}
-          </a>
-          <a href="{% url 'ideathon:detail' post.id %}"
-            ><h1>{{ post.title }}</h1></a
-          >
-          <div class="post-format">
-            <span>By <a href="#">Jack Ma</a></span>
-            <span><i class="fa fa-date"></i> {{ post.created_at }}</span>
-          </div>
-          <p>{{ post.content }}</p>
-          <a href="{% url 'ideathon:detail' post.id %}" class="btn btn-default"
-            >Details</a
-          >
-        </div>
-      </div>
-      {% endfor %}
-      <div class="wow fadeInUp col-md-4 col-sm-4" data-wow-delay="0.5s">
-        <div class="blog-thumb">
-          <a href="{% url 'ideathon:single_post' %}"
-            ><img
-              src="{% static 'images/blog-img3.jpg' %}"
-              class="img-responsive"
-              alt="Blog"
-          /></a>
-          <a href="{% url 'ideathon:single_post' %}"><h1>Swim the Pool</h1></a>
-          <div class="post-format">
-            <span>By <a href="#">Jack Ma</a></span>
-            <span><i class="fa fa-date"></i> 3 June 2016, Friday</span>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-            nonummy nibh euismod tincidunt ut laoreet.
-          </p>
-          <a href="{% url 'ideathon:single_post' %}" class="btn btn-default"
-            >Details</a
-          >
-        </div>
-      </div>
-
-      <div class="wow fadeInUp col-md-4 col-sm-4" data-wow-delay="0.5s">
-        <div class="blog-thumb">
-          <a href="{% url 'ideathon:single_post' %}"
-            ><img
-              src="{% static 'images/blog-img4.jpg' %}"
-              class="img-responsive"
-              alt="Blog"
-          /></a>
-          <a href="{% url 'ideathon:single_post' %}"
-            ><h1>Talking the Sun</h1></a
-          >
-          <div class="post-format">
-            <span>By <a href="#">Sandar</a></span>
-            <span><i class="fa fa-date"></i> 2 June 2016, Thursday</span>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-            nonummy nibh euismod tincidunt ut laoreet.
-          </p>
-          <a href="{% url 'ideathon:single_post' %}" class="btn btn-default"
-            >Read More</a
-          >
-        </div>
-      </div>
-
-      <div class="wow fadeInUp col-md-4 col-sm-4" data-wow-delay="0.5s">
-        <div class="blog-thumb">
-          <a href="{% url 'ideathon:single_post' %}"
-            ><img
-              src="{% static 'images/blog-img5.jpg' %}"
-              class="img-responsive"
-              alt="Blog"
-          /></a>
-          <a href="{% url 'ideathon:single_post' %}"
-            ><h1>View the Mountain</h1></a
-          >
-          <div class="post-format">
-            <span>By <a href="#">Cindy</a></span>
-            <span><i class="fa fa-date"></i> 1 June 2016, Wednesday</span>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-            nonummy nibh euismod tincidunt ut laoreet.
-          </p>
-          <a href="{% url 'ideathon:single_post' %}" class="btn btn-default"
-            >Full Story</a
-          >
-        </div>
-      </div>
-
-      <div class="wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.5s">
-        <div class="blog-thumb">
-          <a href="{% url 'ideathon:single_post' %}"
-            ><img
-              src="{% static 'images/blog-img6.jpg' %}"
-              class="img-responsive"
-              alt="Blog"
-          /></a>
-          <a href="{% url 'ideathon:single_post' %}"><h1>Mountain</h1></a>
-          <div class="post-format">
-            <span>By <a href="#">Linda</a></span>
-            <span><i class="fa fa-date"></i> 31 May 2016, Tuesday</span>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-            nonummy.
-          </p>
-          <a href="{% url 'ideathon:single_post' %}" class="btn btn-default"
-            >Read More</a
-          >
-        </div>
-      </div>
-
-      <div class="wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.5s">
-        <div class="blog-thumb">
-          <a href="{% url 'ideathon:single_post' %}"
-            ><img
-              src="{% static 'images/blog-img7.jpg' %}"
-              class="img-responsive"
-              alt="Blog"
-          /></a>
-          <a href="{% url 'ideathon:single_post' %}"><h1>Cloud</h1></a>
-          <div class="post-format">
-            <span>By <a href="#">Bill Gates</a></span>
-            <span><i class="fa fa-date"></i> 30 May 2016, Monday</span>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-            nonummy.
-          </p>
-          <a href="{% url 'ideathon:single_post' %}" class="btn btn-default"
-            >Details</a
-          >
-        </div>
-      </div>
-
-      <div class="wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.5s">
-        <div class="blog-thumb">
-          <a href="{% url 'ideathon:single_post' %}"
-            ><img
-              src="{% static 'images/blog-img8.jpg' %}"
-              class="img-responsive"
-              alt="Blog"
-          /></a>
-          <a href="{% url 'ideathon:single_post' %}"><h1>Blue Sky</h1></a>
-          <div class="post-format">
-            <span>By <a href="#">Elon Musk</a></span>
-            <span><i class="fa fa-date"></i> 29 May 2016, Sunday</span>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-            nonummy.
-          </p>
-          <a href="{% url 'ideathon:single_post' %}" class="btn btn-default"
-            >Read More</a
-          >
-        </div>
-      </div>
-
-      <div class="wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.5s">
-        <div class="blog-thumb">
-          <a href="{% url 'ideathon:single_post' %}"
-            ><img
-              src="{% static 'images/blog-img9.jpg' %}"
-              class="img-responsive"
-              alt="Blog"
-          /></a>
-          <a href="{% url 'ideathon:single_post' %}"><h1>Forest</h1></a>
-          <div class="post-format">
-            <span>By <a href="#">Jack Ma</a></span>
-            <span><i class="fa fa-date"></i> 28 May 2016, Saturday</span>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-            nonummy.
-          </p>
-          <a href="{% url 'ideathon:single_post' %}" class="btn btn-default"
-            >Details</a
-          >
-        </div>
-      </div>
-
-      <div class="wow fadeInUp col-md-12 col-sm-12" data-wow-delay="0.5s">
-        <h1>Interdum et malesuada fames</h1>
-        <p>
-          Sed quis laoreet purus, a luctus ligula. Suspendisse nec urna a dolor
-          sodales venenatis. Donec et sem quam. Fusce faucibus neque sit amet
-          arcu auctor tincidunt. Etiam feugiat nibh orci, quis sagittis velit
-          pretium ac. Suspendisse egestas ex a dolor dictum gravida. Lorem ipsum
-          dolor sit amet, consectetur adipiscing elit. Fusce sagittis urna id
-          odio consequat fringilla.
-        </p>
-        <p>
-          Integer eu rhoncus libero. Nulla dignissim laoreet eros quis interdum.
-          Proin ut placerat dui, eget vehicula ipsum. Mauris id molestie eros.
-          Vestibulum fringilla dui nunc, vitae euismod ligula consectetur eget.
-          Sed accumsan, ipsum in scelerisque euismod, nisi quam placerat urna,
-          ac porttitor augue sapien varius velit.
-        </p>
       </div>
     </div>
   </div>
