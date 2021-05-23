@@ -86,7 +86,7 @@
                 type="submit"
                 class="form-control"
                 id="submit"
-                value="submit"
+                value="작성완료"
               />
             </div>
           </form>
@@ -97,28 +97,32 @@
         </div>
         {% endif %}
 
-        <div class="blog-comment content">
+        <div class="blog-comment">
           <h3>Comments</h3>
           {% for comment in comments %}
-          <div class="media">
-            <div class="media-body">
-              <p class="media-heading">{{ comment.writer }}</p>
-              <h5>
-                {{ comment.content|linebreaksbr }}
-              </h5>
-              <p class="media-heading">{{comment.created_at}}</p>
+          <div class="blog-comment content">
+            <div class="media">
+              <div class="media-body">
+                <p class="media-heading">{{ comment.writer }}</p>
+                <h5>
+                  {{ comment.content|linebreaksbr }}
+                </h5>
+                <div class="date-btn">
+                  <p class="media-heading">{{comment.created_at}}</p>
+                  {% if user == comment.writer %}
+                  <div class="button">
+                    <div class="project-info url comment">
+                      <a href="{% url 'ideathon:update_comment' post.pk comment.pk %}">수정</a>
+                    </div>
+                    <div class="project-info url comment">
+                      <a href="{% url 'ideathon:delete_comment' post.pk comment.pk %}">삭제</a>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
             </div>
           </div>
-          {% if user == comment.writer %}
-          <div class="button">
-            <div class="project-info url comment">
-              <a href="{% url 'ideathon:update_comment' post.pk comment.pk %}">수정</a>
-            </div>
-            <div class="project-info url comment">
-              <a href="{% url 'ideathon:delete_comment' post.pk comment.pk %}">삭제</a>
-            </div>
-          </div>
-          {% endif %}
           {% endfor %}
         </div>
       </div>

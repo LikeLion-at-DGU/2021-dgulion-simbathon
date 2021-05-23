@@ -1,8 +1,4 @@
 /* detail.html */
-.contact-submit input {
-  width: 100px;
-}
-
 .button {
   display: flex;
 }
@@ -21,6 +17,12 @@
 
 .contact-submit.input {
   margin-top: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.contact-submit > input {
+  width: 100px;
 }
 
 .project-info.url.comment {
@@ -33,6 +35,11 @@
 
 .blog-comment.content {
   border-bottom: 1px solid rgb(199, 199, 199);
+}
+
+.date-btn {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* new.html */
@@ -69,9 +76,7 @@
 }
 
 /* main.html */
-.iso-box.boxxxx {
-  overflow: visible;
-}
+
 .upload-idea {
   display: flex;
   justify-content: flex-start;
@@ -80,5 +85,5 @@
 
 .btn-detail {
   margin-top: 30px;
-  overflow: visible;
+  height: 30px;
 }
