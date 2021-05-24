@@ -44,9 +44,10 @@
 
 /* new.html */
 .new-header {
-  padding-right: 20%;
+  margin-top: 51px;
   display: flex;
   justify-content: center;
+  margin-bottom: 30px;
 }
 
 .new-content {
@@ -86,4 +87,16 @@
 .btn-detail {
   margin-top: 30px;
   height: 30px;
+}
+
+/* login */
+.login-sec {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.login-btn {
+  display: flex;
+  justify-content: center;
 }

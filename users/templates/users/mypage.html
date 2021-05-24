@@ -1,12 +1,14 @@
-{% extends 'base.html' %}
-{% load static %}
-
+{% extends 'base.html' %} 
+{% load static %} 
 {% block content %}
 
 <section id="portfolio">
-  <br><h1>Mypage</h1>
+  <br />
+  <div class="new-header">
+    <h1>MYPAGE</h1>
+  </div>
   <div class="container">
-    <h3>Post</h3>
+    <h3>POST</h3>
     <div class="row">
       <div class="col-md-12 col-sm-12">
         <div class="iso-section wow fadeInUp" data-wow-delay="0.3s">
@@ -15,17 +17,23 @@
               {% for post in posts %}
               <div
                 class="iso-box boxxxx club col-md-3 col-sm-3"
-                data-wow-delay="0.3s">
+                data-wow-delay="0.3s"
+              >
                 <div class="blog-thumb">
                   <img
-                      src="{% static 'images/simbathon.jpg' %}"
-                      class="img-responsive"
-                      alt="Blog"/>
-                  <h2 style="word-break: break-all; color:black;">{{post.title|truncatechars:15}}</h2>
+                    src="{% static 'images/simbathon.jpg' %}"
+                    class="img-responsive"
+                    alt="Blog"
+                  />
+                  <h2 style="word-break: break-all; color: black">
+                    {{post.title|truncatechars:15}}
+                  </h2>
                   <div class="btn-detail">
                     <a
                       href="{% url 'ideathon:detail' post.id %}"
-                      class="upload-btn">Details</a>
+                      class="upload-btn"
+                      >Details</a
+                    >
                   </div>
                 </div>
               </div>
@@ -40,7 +48,7 @@
 
 <section id="portfolio">
   <div class="container">
-    <h3>Comment</h3>
+    <h3>COMMENT</h3>
     <div class="row">
       <div class="col-md-12 col-sm-12">
         <div class="iso-section wow fadeInUp" data-wow-delay="0.3s">
@@ -49,16 +57,24 @@
               {% for comment in comments %}
               <div
                 class="iso-box boxxxx club col-md-3 col-sm-3"
-                data-wow-delay="0.3s">
+                data-wow-delay="0.3s"
+              >
                 <div class="blog-thumb">
-                  <h2 style="word-break: break-all; color:black;">{{comment.content|truncatechars:7}}</h2>
+                  <h2 style="word-break: break-all; color: black">
+                    {{comment.content|truncatechars:7}}
+                  </h2>
                   <div class="post-format">
-                    <span>{{comment.post.title|truncatechars:9}} : {{comment.post.writer}}</span>
+                    <span
+                      >{{comment.post.title|truncatechars:9}} :
+                      {{comment.post.writer}}</span
+                    >
                   </div>
                   <div class="btn-detail">
                     <a
                       href="{% url 'ideathon:detail' comment.post.id %}"
-                      class="upload-btn">Details</a>
+                      class="upload-btn"
+                      >Details</a
+                    >
                   </div>
                 </div>
               </div>
