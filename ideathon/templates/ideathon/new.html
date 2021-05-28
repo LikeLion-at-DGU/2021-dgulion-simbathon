@@ -49,16 +49,9 @@
       ></textarea>
     </div>
     <div class="col-12 new-content">
-      <label for="uploadFile" class="upload-file">
-        <div class="btn btn-outline">
-          <input
-            type="file"
-            id="input-mediafile"
-            name="mediafile"
-            onchange="fileCheck(this)"
-          />
-        </div>
-        <!-- 업로드파일명 -->
+      <label for="uploadFile" class="upload-file" >
+        <div class="btn btn-outline"><input type="file" id="input-mediafile" name="mediafile" onchange="fileCheck(this)"></div>
+        <p></p><!-- 업로드파일명 -->
       </label>
     </div>
     <div class="col-12 new-content upload">
@@ -68,3 +61,12 @@
 </form>
 
 {% endblock %}
+<script>
+  $(".upload-file input[type='file']").change(function(){
+
+// alert("파일 올라감");
+
+  var fileName = $(this).val().replace(/C:\\fakepath\\/i, '');
+  $(this).parent().parent().find("p").text(fileName);
+});
+</script>
