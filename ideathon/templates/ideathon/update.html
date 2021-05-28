@@ -53,17 +53,9 @@
       >{{post.content}}</textarea>
     </div>
     <div class="col-12 new-content">
-      <label for="uploadFile" class="upload-file">
-        <div class="btn btn-outline">
-          <input
-            type="file"
-            id="input-mediafile"
-            name="mediafile"
-            onchange="fileCheck(this)"
-          />
-        </div>
-        <p></p>
-        <!-- 업로드파일명 -->
+      <label for="input-mediafile" class="btn btn-outline">
+        <input type="file" id="input-mediafile" name="mediafile">
+        <p>기존 파일: {{post.file_name}}</p><!-- 업로드파일명 -->
       </label>
     </div>
     <div class="col-12 new-content">
