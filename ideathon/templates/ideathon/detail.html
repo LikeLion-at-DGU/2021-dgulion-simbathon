@@ -34,7 +34,7 @@
         </div>
         <div class="project-info">
           <h4>Writer</h4>
-          <p>{{post.writer.last_name}} {{post.writer.first_name}}</p>
+          <p>{{post.writer.last_name}}{{post.writer.first_name}}</p>
         </div>
         <div class="project-info">
           <h4>Date</h4>
@@ -104,7 +104,7 @@
           <div class="blog-comment content">
             <div class="media">
               <div class="media-body">
-                <p class="media-heading">{{ comment.writer }}</p>
+                <p class="media-heading">{{comment.writer.last_name}}{{comment.writer.first_name}}</p>
                 <h5>
                   {{ comment.content|linebreaksbr }}
                 </h5>
