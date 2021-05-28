@@ -1,26 +1,18 @@
-{% extends 'base.html' %} 
-{% load static %} 
-{% load i18n %} 
-{% block content %}
-<!-- <div
-  class="container"
-  style="text-align: center; width: 300px; margin-bottom: 30px"
-> -->
+{% extends 'base.html' %} {% load static %} {% load i18n %} {% block content %}
 <section id="portfolio">
-	<div class="wow fadeInUp" data-wow-delay="0.5s">
-	<!-- <h1>Simbathon</h1> -->
-	<div class="new-header">
-		<h1>Simbathon</h1>
-	</div>
-	<div class="login-sec">
-		<form class="login" method="POST" action="{% url 'account_login' %}">
-		{% csrf_token %} {{ form.as_p }}
-		<div class="login-btn">
-			<input type="submit" class="upload-btn" value="Login" />
-		</div>
-		</form>
-	</div>
-	</div>
+  <div class="wow fadeInUp" data-wow-delay="0.5s">
+    <div class="new-header">
+      <h1>Simbathon</h1>
+    </div>
+    <div class="login-sec">
+      <form class="login" method="POST" action="{% url 'account_login' %}">
+        {% csrf_token %} {{ form.as_p }}
+        <div class="login-btn">
+          <input type="submit" class="upload-btn" value="Login" />
+        </div>
+      </form>
+    </div>
+  </div>
 </section>
 <!-- </div> -->
 {% endblock %}
