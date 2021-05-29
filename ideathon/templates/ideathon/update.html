@@ -54,7 +54,9 @@
     </div>
     <div class="col-12 new-content">
       <input type="file" id="input-mediafile" name="mediafile" onchange="fileCheck(this)">
-      <p>기존 파일: {{post.file_name}}</p><!-- 업로드파일명 -->
+      {% if post.mediafile %}
+        <p>기존 파일: {{post.file_name}}</p><!-- 업로드파일명 -->
+      {% endif %}
     </div>
     <div class="col-12 new-content">
       <div id="content"></div>
