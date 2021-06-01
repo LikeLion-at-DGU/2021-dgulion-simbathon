@@ -42,6 +42,10 @@
   justify-content: space-between;
 }
 
+.line-content {
+  line-height: normal;
+}
+
 /* new.html */
 .new-header {
   margin-top: 51px;
