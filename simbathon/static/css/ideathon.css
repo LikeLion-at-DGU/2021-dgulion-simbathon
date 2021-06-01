@@ -42,6 +42,14 @@
   justify-content: space-between;
 }
 
+.line-content {
+  line-height: normal;
+}
+
+.line-content.main-post {
+  letter-spacing: 0.1rem;
+}
+
 /* new.html */
 .new-header {
   margin-top: 51px;
