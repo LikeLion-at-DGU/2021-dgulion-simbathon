@@ -1,0 +1,80 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<!-- Header section
+================================================== -->
+<section id="header" class="header-five">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
+        <div class="header-thumb">
+          <h1 class="wow fadeIn" data-wow-delay="0.6s" style="word-break: break-all">
+            {{ post.title }}
+          </h1>
+          <h3 class="wow fadeInUp" data-wow-delay="0.9s">Simbathon</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Single Project section
+================================================== -->
+<section id="single-project">
+  <div class="container">
+    <div class="row">
+      <div class="wow fadeInUp col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-4" data-wow-delay="1s">
+        <div class="project-info">
+          <h4>Category</h4>
+          {% if post.category == "hi-sw" %}
+          <p>HI-SW 봉사단 관련 서비스</p>
+          {% else %}
+          <p>중앙 동아리 관련 서비스</p>
+          {% endif %}
+        </div>
+        <div class="project-info">
+          <h4>Team</h4>
+          <p>{{post.team}}</p>
+        </div>
+        <div class="project-info">
+          <h4>Writer</h4>
+          <p>{{post.writer.last_name}}{{post.writer.first_name}}</p>
+        </div>
+        <div class="project-info">
+          <h4>Date</h4>
+          <p>{{ post.created_at }}</p>
+        </div>
+        {% if user == post.writer %}
+        <div class="button">
+          <div class="project-info url">
+            <div class="edit">
+              <a href="{% url 'hackerthon:update' post.id %}">수정</a>
+            </div>
+          </div>
+          <div class="project-info url">
+            <a href="{% url 'hackerthon:delete' post.id %}">삭제</a>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+      <div class="wow fadeInUp col-md-7 col-sm-7" data-wow-delay="1s">
+        <h4>github</h4>
+        <a href="{{ post.github }}" class="img-responsive" target="_blank">{{post.github}}</a>
+      </div>
+      <div class="wow fadeInUp col-md-7 col-sm-7" data-wow-delay="1s">
+        <h4>시연 영상</h4>
+        <a href="{{ post.demo }}" class="img-responsive" target="_blank">{{post.demo}}</a>
+      </div>
+      <div class="wow fadeInUp col-md-7 col-sm-7" data-wow-delay="1s">
+        <h4>서비스 소개 자료</h4>
+        <a href="{{ post.introduction.url }}" class="img-responsive" target="_blank">{{post.file_name}}</a>
+      </div>
+      <div class="wow fadeInUp col-md-7 col-sm-7" data-wow-delay="1s">
+        <h4>내용</h4>
+        <h3 class="line-content main-post" style="word-break: break-all">
+          {{ post.content|linebreaksbr }}
+        </h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
