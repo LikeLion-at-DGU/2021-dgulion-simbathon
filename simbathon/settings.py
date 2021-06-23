@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     'main',
     'ideathon',
     'users',
+    'hackerthon',
 ]
 
 MIDDLEWARE = [
