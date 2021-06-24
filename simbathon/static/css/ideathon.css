@@ -50,6 +50,10 @@
   letter-spacing: 0.1rem;
 }
 
+.detail-info {
+  line-height: 28px;
+}
+
 /* new.html */
 .new-header {
   margin-top: 51px;

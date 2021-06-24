@@ -66,39 +66,21 @@
       </div>
     </div>
     <div class="row">
-      <div
-        class="
+      <div class="
           wow
           fadeInUp
           col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10
           container
-        "
-        data-wow-delay="1s"
-      >
+        " data-wow-delay="1s">
         {% if user.is_authenticated %}
         <div class="blog-comment-form">
           <h3>Leave a comment</h3>
-          <form
-            action="{% url 'ideathon:create_comment' post.id %}"
-            method="post"
-          >
+          <form action="{% url 'ideathon:create_comment' post.id %}" method="post">
             {% csrf_token %}
-            <textarea
-              class="form-control"
-              placeholder="Comment"
-              rows="5"
-              name="content"
-              required
-              id="comment"
-            ></textarea>
+            <textarea class="form-control" placeholder="Comment" rows="5" name="content" required
+              id="comment"></textarea>
             <div class="contact-submit input">
-              <input
-                name="submit"
-                type="submit"
-                class="form-control"
-                id="submit"
-                value="작성완료"
-              />
+              <input name="submit" type="submit" class="form-control" id="submit" value="작성완료" />
             </div>
           </form>
         </div>
