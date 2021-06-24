@@ -38,6 +38,30 @@
                 </div>
               </div>
               {% endfor %}
+              {% for result in results %}
+              <div
+                class="iso-box boxxxx club col-md-3 col-sm-3"
+                data-wow-delay="0.3s"
+              >
+                <div class="blog-thumb">
+                  <img
+                    src="{% static 'images/simbathon.jpg' %}"
+                    class="img-responsive"
+                    alt="Blog"
+                  />
+                  <h2 style="word-break: break-all; color: black">
+                    {{result.title|truncatechars:15}}
+                  </h2>
+                  <div class="btn-detail">
+                    <a
+                      href="{% url 'hackerthon:detail' result.id %}"
+                      class="upload-btn"
+                      >Details</a
+                    >
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
             </div>
           </div>
         </div>
