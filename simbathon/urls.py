@@ -24,5 +24,6 @@ urlpatterns = [
     path('ideathon/', include('ideathon.urls')),
     path('accounts/',include('allauth.urls')),
     path('users/',include('users.urls')),
+    path('hackerthon/',include('hackerthon.urls')),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

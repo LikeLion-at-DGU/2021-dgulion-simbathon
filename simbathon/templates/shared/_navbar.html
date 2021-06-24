@@ -21,6 +21,7 @@
                   <ul id="nav-menu">
                     <li><a href="{% url 'main:index' %}">Home</a></li>
                     <li><a href="{% url 'ideathon:main' %}">Ideathon</a></li>
+                    <li><a href="{% url 'hackerthon:main' %}">Hackerthon</a></li>
                     {% if user.is_authenticated %}
                     <li><a href="{% url 'users:mypage' %}">Mypage</a></li>
                       <li><a href="{% url 'account_logout' %}">Logout</a></li>
