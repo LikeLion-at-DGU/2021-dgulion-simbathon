@@ -55,23 +55,31 @@
         </div>
         {% endif %}
       </div>
-      <div class="wow fadeInUp col-md-7 col-sm-7" data-wow-delay="1s">
-        <h4>github</h4>
-        <a href="{{ post.github }}" class="img-responsive" target="_blank">{{post.github}}</a>
-      </div>
-      <div class="wow fadeInUp col-md-7 col-sm-7" data-wow-delay="1s">
-        <h4>시연 영상</h4>
-        <a href="{{ post.demo }}" class="img-responsive" target="_blank">{{post.demo}}</a>
-      </div>
-      <div class="wow fadeInUp col-md-7 col-sm-7" data-wow-delay="1s">
-        <h4>서비스 소개 자료</h4>
-        <a href="{{ post.introduction.url }}" class="img-responsive" target="_blank">{{post.file_name}}</a>
-      </div>
-      <div class="wow fadeInUp col-md-7 col-sm-7" data-wow-delay="1s">
-        <h4>내용</h4>
-        <h3 class="line-content main-post" style="word-break: break-all">
-          {{ post.content|linebreaksbr }}
-        </h3>
+      <div class="wow fadeInUp" data-wow-delay="1s">
+        <div class="wow fadeInUp col-md-7 col-sm-7 project-info">
+          <h4>github</h4>
+          <p>
+            <a href="{{ post.github }}" class="" target="_blank">{{post.github}}</a>
+          </p>
+        </div>
+        <div class="wow fadeInUp col-md-7 col-sm-7 project-info">
+          <h4>시연 영상</h4>
+          <p>
+            <a href="{{ post.demo }}" class="" target="_blank">{{post.demo}}</a>
+          </p>
+        </div>
+        <div class="wow fadeInUp col-md-7 col-sm-7 project-info">
+          <h4>서비스 소개 자료</h4>
+          <p>
+            <a href="{{ post.introduction.url }}" class="" target="_blank">{{post.file_name}}</a>
+          </p>
+        </div>
+        <div class="wow fadeInUp col-md-7 col-sm-7 project-info line-content">
+          <h4>내용</h4>
+          <h3 class="line-content main-post" style="word-break: break-all">
+            {{ post.content|linebreaksbr }}
+          </h3>
+        </div>
       </div>
     </div>
   </div>
