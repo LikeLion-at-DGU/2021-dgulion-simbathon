@@ -38,6 +38,30 @@
                 </div>
               </div>
               {% endfor %}
+              {% if member %}
+              <div
+                class="iso-box boxxxx club col-md-3 col-sm-3"
+                data-wow-delay="0.3s"
+              >
+                <div class="blog-thumb">
+                  <img
+                    src="{% static 'images/simbathon.jpg' %}"
+                    class="img-responsive"
+                    alt="Blog"
+                  />
+                  <h2 style="word-break: break-all; color: black">
+                    {{member.result.title|truncatechars:15}}
+                  </h2>
+                  <div class="btn-detail">
+                    <a
+                      href="{% url 'hackerthon:detail' member.result.pk %}"
+                      class="upload-btn"
+                      >Details</a
+                    >
+                  </div>
+                </div>
+              </div>
+              {% endif %}
             </div>
           </div>
         </div>

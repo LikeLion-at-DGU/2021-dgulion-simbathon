@@ -26,7 +26,8 @@ def create(request):
 
 def detail(request, id):
     post = get_object_or_404(Result, pk=id)
-    return render(request, 'hackerthon/detail.html', {'post':post}) 
+    all_members = post.members.all()
+    return render(request, 'hackerthon/detail.html', {'post':post, 'members':all_members}) 
 
 @login_required
 def update(request, id):
@@ -50,3 +51,16 @@ def delete(request, id):
     post = get_object_or_404(Result, pk=id)
     post.delete()
     return redirect("hackerthon:main")
+
+def create_member(request, id):
+    if request.method == "POST":
+        post = get_object_or_404(Result, pk=id)
+        member = request.POST['member']
+        Member.objects.create(result=post, member = member)
+    return redirect('hackerthon:detail', post.pk)
+
+def delete_member(request, id, member_id):
+    post = get_object_or_404(Result, pk=id)
+    member = get_object_or_404(Member, pk=member_id)
+    member.delete()
+    return redirect('hackerthon:detail', post.pk)

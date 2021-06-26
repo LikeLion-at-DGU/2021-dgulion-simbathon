@@ -23,3 +23,7 @@ class Result(models.Model):
 
     def file_name(self):
         return self.introduction.name[11:].split('.')[-2]
+
+class Member(models.Model):
+    result = models.ForeignKey(Result, on_delete = models.CASCADE, related_name='members')
+    member = models.CharField(max_length=10)
