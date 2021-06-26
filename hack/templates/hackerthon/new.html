@@ -1,0 +1,103 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section>
+  <div class="new-header">
+    <h1>최종 결과물 제출</h1>
+  </div>
+</section>
+
+<form
+  action="{% url 'hackerthon:create' %}"
+  method="POST"
+  enctype="multipart/form-data"
+>
+  {% csrf_token %}
+  <div class="container">
+    <div class="col-12">
+      <label>카테고리</label>
+      <div>
+        <select
+          name="category"
+          id="category"
+          class="form-control col-md-2 mb-2 new-content"
+          style="color: black"
+        >
+          <option value="hi-sw">HI-SW 봉사단 관련 서비스</option>
+          <option value="club">중앙 동아리 관련 서비스</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-12 new-content">
+      <label>팀명</label>
+      <div>
+        <select
+          name="team"
+          id="team"
+          class="form-control col-md-2 mb-2 new-content"
+          style="color: black"
+        >
+          <option value="1팀">1팀</option>
+          <option value="2팀">2팀</option>
+          <option value="3팀">3팀</option>
+          <option value="4팀">4팀</option>
+          <option value="5팀">5팀</option>
+          <option value="6팀">6팀</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-12 new-content">
+      <label>제목</label>
+      <input
+        type="text"
+        class="form-control mb-30"
+        name="title"
+        placeholder="제목 입력(공백 포함 최대 30자)"
+        id="title_id"
+        maxlength="30"
+        required
+        style="color: black"
+      />
+    </div>
+    <div class="col-12 new-content">
+      <label>github</label>
+      <input
+        type="text"
+        class="form-control mb-30"
+        name="github"
+        placeholder="github repository url"
+        id="title_id"
+        required
+        style="color: black"
+      />
+    </div>
+    <div class="col-12 new-content">
+      <label>시연 영상</label>
+      <input
+        type="text"
+        class="form-control mb-30"
+        name="demo"
+        placeholder="시연영상 youtube url"
+        id="title_id"
+        required
+        style="color: black"
+      />
+    </div>
+    <div class="col-12 new-content">
+      <label>서비스 소개 자료</label>
+      <input type="file" id="input-mediafile" name="introduction" onchange="fileCheck(this)" required>
+    </div>
+    <div class="col-12 new-content">
+      <label>내용</label>
+      <textarea
+      class="form-control mb-30"
+      name="content"
+      placeholder="내용 입력"
+      style="color: black"
+      ></textarea>
+    </div>
+    <div class="col-12 new-content upload">
+      <button type="submit" class="upload-btn">Upload</button>
+    </div>
+  </div>
+</form>
+
+{% endblock %}

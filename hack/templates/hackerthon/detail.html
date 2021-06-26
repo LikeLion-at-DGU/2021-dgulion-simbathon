@@ -95,7 +95,7 @@
           <h3>Leave a member</h3>
           <form action="{% url 'hackerthon:create_member' post.id %}" method="post">
             {% csrf_token %}
-            <label>이름</label>
+            <label>제목</label>
             <input type="text" class="form-control mb-30" name="member" placeholder="Member" id="member" maxlength="10"required/>
             <div class="contact-submit input">
               <input name="submit" type="submit" class="form-control" id="submit" value="작성완료" />
