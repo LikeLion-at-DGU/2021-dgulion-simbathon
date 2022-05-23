@@ -7,7 +7,6 @@ class PostAdmin(admin.ModelAdmin):
         'id',
         'title',
         'writer',
-        'category',
         'mediafile',
         'created_at',
     )

@@ -5,7 +5,6 @@ from .models import *
 class ResultAdmin(admin.ModelAdmin):
     list_display = (
         'id',
-        'category',
         'title',
         'writer',
         'team',
