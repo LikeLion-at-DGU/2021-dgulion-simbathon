@@ -23,14 +23,6 @@
     <div class="row">
       <div class="wow fadeInUp col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-4" data-wow-delay="1s">
         <div class="project-info">
-          <h4>Category</h4>
-          {% if post.category == "hi-sw" %}
-          <p>HI-SW 봉사단 관련 서비스</p>
-          {% else %}
-          <p>중앙 동아리 관련 서비스</p>
-          {% endif %}
-        </div>
-        <div class="project-info">
           <h4>Writer</h4>
           <p>{{post.writer.last_name}}{{post.writer.first_name}}</p>
         </div>
@@ -77,7 +69,7 @@
           <h3>Leave a comment</h3>
           <form action="{% url 'ideathon:create_comment' post.id %}" method="post">
             {% csrf_token %}
-            <textarea class="form-control" placeholder="Comment" rows="5" name="content" required
+            <textarea class="form-control" placeholder="Comment" rows="3" name="content" required
               id="comment"></textarea>
             <div class="contact-submit input">
               <input name="submit" type="submit" class="form-control" id="submit" value="작성완료" />
@@ -92,7 +84,7 @@
         {% endif %}
 
         <div class="blog-comment">
-          <h4>Comments</h4>
+          <h4>Comments </h4>
           {% for comment in comments %}
           <div class="blog-comment content">
             <div class="media">

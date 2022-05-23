@@ -18,7 +18,6 @@ def create(request):
     new_post = Post()
     new_post.title = request.POST['title']
     new_post.writer = request.user
-    new_post.category = request.POST['category']
     new_post.content = request.POST['content']
     new_post.mediafile = request.FILES.get('mediafile')
     new_post.save()
@@ -36,7 +35,6 @@ def update(request, id):
         if request.method == "POST":
             post.title = request.POST['title']
             post.content = request.POST['content']
-            post.category = request.POST['category']
             if request.FILES.get('mediafile'):
                 post.mediafile = request.FILES.get('mediafile')
             post.save()
@@ -63,7 +61,6 @@ def update_comment(request, post_id, comment_id):
     if request.method=="POST":
         comment.content = request.POST['content']
         comment.save()
-        all_comments = post.comments.all()
         return redirect('ideathon:detail', post.pk)
     return render(request, 'ideathon/update_comment.html', {'comment' :comment})
 
